@@ -1,18 +1,5 @@
 <script setup>
-import { ref } from 'vue';
 import Row from './Row.vue';
-import { createStore } from 'vuex';
-const store = createStore({
-  state: {
-    filled: false,
-  },
-  mutations: {
-    change(state) {
-      state.filled = !state.filled;
-    },
-  },
-});
-const counts = ref(0);
 </script>
 
 <template>
@@ -21,4 +8,10 @@ const counts = ref(0);
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.card {
+  border: solid 1px lightgray;
+  border-radius: 10px;
+  list-style: none;
+}
+</style>

@@ -4,6 +4,9 @@ import Wireframe from './components/Wireframe.vue';
 
 <template>
   <div>
+    <h1>Quang Viet Nguyen</h1>
+    <h2>Scrawlr Vue 3 Assessment</h2>
+    <h3>Using Vite and Vue 3 with Vuex Store</h3>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>

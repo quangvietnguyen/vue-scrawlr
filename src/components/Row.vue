@@ -1,6 +1,17 @@
 <script setup>
 import { ref } from 'vue';
 import Upvote from './Upvote.vue';
+import { createStore } from 'vuex';
+const store = createStore({
+  state: {
+    filled: false,
+  },
+  mutations: {
+    change(state) {
+      state.filled = !state.filled;
+    },
+  },
+});
 const counts = ref(0);
 </script>
 
@@ -8,7 +19,7 @@ const counts = ref(0);
   <div class="row">
     <div class="row-wrapper">
       <div v-if="counts > 0" class="row vote">
-        <li v-for="count in counts"><Upvote /></li>
+        <li v-for="count in counts"><Upvote :store="store" /></li>
       </div>
     </div>
     <span v-if="counts < 7" class="button">
@@ -22,6 +33,7 @@ const counts = ref(0);
   display: flex;
   list-style: none;
   flex-direction: row;
+  margin: 20px;
 }
 .row-wrapper {
   border: 1px solid lightgray;
